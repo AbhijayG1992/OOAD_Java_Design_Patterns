@@ -1,0 +1,18 @@
+package CreationalDesignPatterns.Factory01.FactoryDesignPatternExample;
+
+public class PlanFactory {
+
+    public Plan getPlan(String planType) {
+        if (planType == null) {
+            return null;
+        }
+        if (planType.equalsIgnoreCase("DOMESTIC")) {
+            return new DomesticPlan();
+        } else if (planType.equalsIgnoreCase("COMMERCIA")) {
+            return new CommercialPlan();
+        } else if (planType.equalsIgnoreCase("INSTITUTIONAL")) {
+            return new InstitutionalPlan();
+        }
+        return null;
+    }
+}
